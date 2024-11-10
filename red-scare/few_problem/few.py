@@ -14,48 +14,115 @@ def read_files(directory, initial_string=None):
     """
     file_contents = {}
     
+    # Debugging: Confirm the directory path and initial_string
+    print(f"Reading from directory: {directory}")
+    print(f"Initial string for filtering: {initial_string} (type: {type(initial_string)})")
+    
     # Iterate through files in the directory
     for filename in os.listdir(directory):
+        file_path = os.path.join(directory, filename)
+        
         # Check if it's a file and matches the initial_string (if provided)
-        if os.path.isfile(os.path.join(directory, filename)):
-            if initial_string is None or filename.startswith(initial_string):
+        if os.path.isfile(file_path) and filename.endswith('.txt'):
+            # Debugging: Check if the file matches the condition
+            matches_condition = initial_string is None or filename.startswith(initial_string)
+            print(f"Checking file: {filename} | Matches condition: {matches_condition}")
+            
+            if matches_condition:
                 # Read and store the contents
-                with open(os.path.join(directory, filename), 'r') as file:
-                    file_contents[filename] = file.read()
+                print(f"Reading file: {filename}")  # Debugging filename
+                with open(file_path, 'r') as file:
+                    content = file.read()
+                    print(f"Content (first 100 chars): {content[:100]}")  # Debugging content preview
+                    file_contents[filename] = content
     
+    # Debugging: Print out the dictionary of file contents
+    print("File contents dictionary keys:", list(file_contents.keys()))
     return file_contents
 
-# Example usage
-directory = "red-scare\data"  # Replace with your actual path
-initial_string = "common-1-"  # Replace with initial string to filter, or set to None to read all
 
-# Read files
-files_data = read_files(directory, initial_string)
+# # Print results (for verification)
+# for filename, content in files_data.items():
+#     print(f"Filename: {filename}")
+#     print(f"Content: {content[:100]}")  # Print the first 100 characters to avoid too much output
+#     print("-" * 40)
 
-# Print results (for verification)
-for filename, content in files_data.items():
-    print(f"Filename: {filename}")
-    print(f"Content: {content[:100]}")  # Print the first 100 characters to avoid too much output
-    print("-" * 40)
 
-n, m, r = map(int, input().strip().split())
-start, terminal = input().split()
-V = []
-R = []
-for i in range (n):
-    temp = input()
-    if ("*" in temp):
-        R.append(temp.split[0])
-    else:
-        V.append(temp)
+def input_handling_for_few(file_content):
+    lines = file_content.splitlines()
+    # n, m, r = map(int, input().strip().split())
+    # start, terminal = input().split()
+    n, m, r = map(int, lines[0].strip().split())
+    n_lines_start_at = 2
+    m_lines_start_at = n_lines_start_at+n
+    start, terminal = lines[1].split()
 
-print(R)
+    V = []
+    R = []
+# Vertices processing
+    for i in range (n_lines_start_at, n_lines_start_at+n):
+        temp = lines[i]
+        if ("*" in temp):
+            R.append(temp.split()[0])
+        else:
+            V.append(temp)
+    print(R)
 
-adjacency_list = [[] for _ in V]
+    # Debugging output for verification
+    print(f"R: {R}")
+    print(f"V: {V}")
 
-for i in range (m):
-    u, direction, v = input.split()
-    if (u in R or v in R):
-        continue
+    adjacency_list_V = {}
+    adjacency_list_R = {}
+    adjacency_list_V_R = {}
+# Edges processing
+    for i in range (m_lines_start_at, m_lines_start_at+m):
+        u, direction, v = lines[i].split()
+            
+        if (u in R and v in R):
+            if u not in adjacency_list_R:
+                adjacency_list_R[u] = []
+            adjacency_list_R[u].append((u, direction, v))
 
-    add_edge(adjacency_list, u, v)
+        elif (u in R or v in R):
+            if u not in adjacency_list_V_R:
+                adjacency_list_V_R[u] = []
+            adjacency_list_V_R[u].append((u, direction, v))
+
+        else:
+            if u not in adjacency_list_V:
+                adjacency_list_V[u] = []
+            adjacency_list_V[u].append((u, direction, v))
+
+    # Debugging output for verification
+    print(f"Adjacency list V: {adjacency_list_V}")
+    print(f"Adjacency list R: {adjacency_list_R}")
+    print(f"Adjacency list V-R: {adjacency_list_V_R}")
+
+    return V, R, adjacency_list_V, adjacency_list_R, adjacency_list_V_R
+
+
+def few_dijkstra_logic():
+    """
+    Placeholder for your Dijkstra algorithm logic.
+    """
+    # Implement your Dijkstra logic here
+    print('Dijkstra logic executed.')
+
+def main():
+    directory = "red-scare\instance-generators\handmade"  # Replace with your actual path
+    initial_string = "G-ex"  # Set to None to read all files
+    files_data = read_files(directory, initial_string)
+    # Process files
+    for filename, content in files_data.items():
+        print(f"Processing file: {filename}")
+        
+        # 1. Input handling for the file (reading, parsing, etc.)
+        V, R, adjacency_list_V, adjacency_list_R, adjacency_list_V_R = input_handling_for_few(content)
+        
+        # 2. Running the algorithm
+        # few_dijkstra_logic(V, R, adjacency_list_V, adjacency_list_R, adjacency_list_V_R)
+
+
+if __name__ == '__main__':
+    main()
