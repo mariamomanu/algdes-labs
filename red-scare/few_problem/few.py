@@ -1,5 +1,6 @@
 import os
 from few_graph import Graph
+import sys
 
 def read_files(directory, initial_string=None):
     """
@@ -104,11 +105,36 @@ def input_handling_for_few(file_content):
 
 
 def dijsktra_algorithm(graph, start_node):
-    """
-    Placeholder for your Dijkstra algorithm logic.
-    """
-    # Implement your Dijkstra logic here
-    print('Dijkstra logic executed.')
+    unvisited_nodes = list(graph.getnodes())
+    shortest_path = {}
+    previous_nodes = {}
+    max_value = sys.maxsize
+    for node in unvisited_nodes:
+        shortest_path[node] = max_value
+    shortest_path[start_node] = 0
+
+    while unvisited_nodes:
+        current_min_node = None
+        for node in unvisited_nodes:
+            if current_min_node == None:
+                current_min_node = node
+            elif shortest_path[node] < shortest_path[current_min_node]:
+                current_min_node = node
+        unvisited_nodes.remove = current_min_node
+    return previous_nodes, shortest_path
+
+def print_results (previous_nodes, shortest_path, start_node, terminal_node):
+    path = []
+    node = target_node
+
+    while node != start_node:
+        path.append(node)
+        node = previous_nodes[node]
+
+    path.append(start_node)
+
+    print("found the path with fewest red nodes with a value of:".format(shortest_path[terminal_node]))
+    print("->".join(reversed(path)))
 
 def main():
     directory = "red-scare\instance-generators\handmade"  # Replace with your actual path
