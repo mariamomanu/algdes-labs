@@ -1,4 +1,5 @@
 import os
+from few_graph import Graph
 
 def read_files(directory, initial_string=None):
     """
@@ -102,7 +103,7 @@ def input_handling_for_few(file_content):
     return V, R, adjacency_list_V, adjacency_list_R, adjacency_list_V_R
 
 
-def few_dijkstra_logic():
+def dijsktra_algorithm(graph, start_node):
     """
     Placeholder for your Dijkstra algorithm logic.
     """
