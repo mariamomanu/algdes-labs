@@ -1,5 +1,7 @@
 import subprocess
 import os
+import time
+
 from constants import DATA_DIR, RESULTS_DIR, SOME_DIR
 
 if __name__ == "__main__":
@@ -14,17 +16,28 @@ if __name__ == "__main__":
             '.txt')])
     assert input_files, "No input files found in data directory"
 
-    # Delete existing results file
-    if os.path.exists(RESULTS_DIR / "some.txt"):
-        os.remove(RESULTS_DIR / "some.txt")
+    # Get set of results file names from the results directory
+    result_exists = set()
+    with open(RESULTS_DIR / "some.txt", "r") as results:
+        for line in results:
+            result_exists.add(line.split()[0])
+
+    # # Delete existing results file
+    # if os.path.exists(RESULTS_DIR / "some.txt"):
+    #     os.remove(RESULTS_DIR / "some.txt")
 
     output_file = RESULTS_DIR / "some.txt"
+    batch_start = time.time()
     for input_file_path in input_files:
         result = None
         input_filename = input_file_path.split("/")[-1]
+        if input_filename in result_exists:
+            print(f"Skipping {input_filename}")
+            continue
         print(f"Processing {input_filename}")
 
         # Run the script with the input file and capture the output
+        run_start = time.time()
         try:
             process = subprocess.run(
                 ["python", SOME_DIR / "some.py"],
@@ -43,9 +56,11 @@ if __name__ == "__main__":
         except subprocess.TimeoutExpired:
             result = f"Timeout_{TIMEOUT}_s"
 
-        print(result)
+        print("\t"+result)
+        print(f"\t{time.time() - run_start:.2f} seconds")
         # Write the filename and result to the output file
         with open(output_file, "a") as results:
             results.write(f"{input_filename} {result}\n")
 
+    print(f"Batch completed in {time.time() - batch_start:.2f} seconds")
     print(f"Results saved to {RESULTS_DIR}")

@@ -61,7 +61,7 @@ if __name__ == "__main__":
         adj_matrix_copy = copy.deepcopy(adj_matrix)  # Make a deep copy
         adj_matrix_copy[super_source][red_node] = 2
         try:
-            edmonds_karp = EdmondsKarp(adj_matrix)
+            edmonds_karp = EdmondsKarp(adj_matrix_copy)
             max_flow, _ = edmonds_karp.run(super_source, super_sink)
             # max_flow = ford_fulkerson(adj_matrix_copy, super_source, super_sink)
         except RecursionError:
