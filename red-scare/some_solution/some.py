@@ -1,7 +1,6 @@
 import copy
 
 from edmonds_karp import EdmondsKarp
-from ford_fulkerson import ford_fulkerson
 
 """
 Pseudo code:
@@ -14,7 +13,7 @@ Pseudo code:
     Connect s and t to super sink with edge weights of 1
     while red vertex list is not empty:
         Pop red vertex from the list and connect to super source with edge weight of 2
-        Run Ford Fulkerson to find the max flow between super source and super sink.
+        Run Edmonds Karp to find the max flow between super source and super sink.
         If max_flow = 2 then return true
     return false
 """
@@ -63,7 +62,6 @@ if __name__ == "__main__":
         try:
             edmonds_karp = EdmondsKarp(adj_matrix_copy)
             max_flow, _ = edmonds_karp.run(super_source, super_sink)
-            # max_flow = ford_fulkerson(adj_matrix_copy, super_source, super_sink)
         except RecursionError:
             print("RecursionError")
             exit(0)
