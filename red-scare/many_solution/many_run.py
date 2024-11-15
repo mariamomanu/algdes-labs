@@ -2,13 +2,13 @@ import subprocess
 import os
 import time
 
-from constants import DATA_DIR, RESULTS_DIR, SOME_DIR, MANY_DIR
+from constants import DATA_DIR, RESULTS_DIR, MANY_DIR
 
 if __name__ == "__main__":
     assert os.getcwd().split("/")[-1] == "red-scare", "Working directory must be red-scare"
 
     # One hour
-    TIMEOUT = 5  # seconds
+    TIMEOUT = 3600  # seconds
 
     # List of input files. Get all files in directory
     input_files = sorted([os.path.join(DATA_DIR, f) for f in os.listdir(DATA_DIR)
@@ -16,15 +16,15 @@ if __name__ == "__main__":
             '.txt')])
     assert input_files, "No input files found in data directory"
 
-    # Get set of results file names from the results directory
+    # Use if want to skip existing results
     result_exists = set()
     # with open(RESULTS_DIR / "many.txt", "r") as results:
     #     for line in results:
     #         result_exists.add(line.split()[0])
 
-    # Delete existing results file
-    if os.path.exists(RESULTS_DIR / "many.txt"):
-        os.remove(RESULTS_DIR / "many.txt")
+    # # Delete existing results file
+    # if os.path.exists(RESULTS_DIR / "many.txt"):
+    #     os.remove(RESULTS_DIR / "many.txt")
 
     output_file = RESULTS_DIR / "many.txt"
     batch_start = time.time()
@@ -46,11 +46,9 @@ if __name__ == "__main__":
                 capture_output=True,
                 timeout=TIMEOUT
             )
-            # Check for process return code inside the try block to avoid issues if an exception is raised
             if process.returncode == 0:
                 result = process.stdout.strip()
             else:
-                # Strip out traceback from stderr and log only the last line of the error message
                 result = process.stderr.splitlines()[
                     -1] if process.stderr else "Unknown error"
         except subprocess.TimeoutExpired:
@@ -58,7 +56,7 @@ if __name__ == "__main__":
 
         print("\t"+result)
         print(f"\t{time.time() - run_start:.2f} seconds")
-        # Write the filename and result to the output file
+
         with open(output_file, "a") as results:
             results.write(f"{input_filename} {result}\n")
 
