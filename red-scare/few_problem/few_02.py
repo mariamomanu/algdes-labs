@@ -160,7 +160,14 @@ def main():
         adjacency_directed, start_node, terminal_node = input_handling_for_few(content)
         # 2. Running the algorithm
         result = dijkstra(adjacency_directed, start_node, terminal_node)
-        print("Result is: ", result)
+        with open('out.txt', 'a') as f:  # Use 'a' for append mode to avoid overwriting
+            print(f'Filename: {filename}', file=f)  # Write filename
+            print(f'Result: {result}', file=f)  # Write result
+            print('-' * 20, file=f)  # Add a separator for readability
+        
+        # print("Result is: ", result)
+
+        
 
 if __name__ == '__main__':
     main()

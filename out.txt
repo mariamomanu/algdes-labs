@@ -1,0 +1,463 @@
+Filename: wall-z-4.txt
+Filename: bht.txt
+Result: 0
+--------------------
+Filename: common-1-100.txt
+Result: -1
+--------------------
+Filename: common-1-1000.txt
+Result: -1
+--------------------
+Filename: common-1-1500.txt
+Result: -1
+--------------------
+Filename: common-1-20.txt
+Result: -1
+--------------------
+Filename: common-1-2000.txt
+Result: -1
+--------------------
+Filename: common-1-250.txt
+Result: -1
+--------------------
+Filename: common-1-2500.txt
+Result: 1
+--------------------
+Filename: common-1-3000.txt
+Result: 1
+--------------------
+Filename: common-1-3500.txt
+Result: 1
+--------------------
+Filename: common-1-4000.txt
+Result: 1
+--------------------
+Filename: common-1-4500.txt
+Result: 1
+--------------------
+Filename: common-1-50.txt
+Result: -1
+--------------------
+Filename: common-1-500.txt
+Result: -1
+--------------------
+Filename: common-1-5000.txt
+Result: 1
+--------------------
+Filename: common-1-5757.txt
+Result: 1
+--------------------
+Filename: common-2-100.txt
+Result: -1
+--------------------
+Filename: common-2-1000.txt
+Result: 1
+--------------------
+Filename: common-2-1500.txt
+Result: 1
+--------------------
+Filename: common-2-20.txt
+Result: -1
+--------------------
+Filename: common-2-2000.txt
+Result: 1
+--------------------
+Filename: common-2-250.txt
+Result: -1
+--------------------
+Filename: common-2-2500.txt
+Result: 1
+--------------------
+Filename: common-2-3000.txt
+Result: 1
+--------------------
+Filename: common-2-3500.txt
+Result: 1
+--------------------
+Filename: common-2-4000.txt
+Result: 1
+--------------------
+Filename: common-2-4500.txt
+Result: 1
+--------------------
+Filename: common-2-50.txt
+Result: -1
+--------------------
+Filename: common-2-500.txt
+Result: 1
+--------------------
+Filename: common-2-5000.txt
+Result: 1
+--------------------
+Filename: common-2-5757.txt
+Result: 1
+--------------------
+Filename: dodecahedron.txt
+Result: 1
+--------------------
+Filename: G-ex.txt
+Result: 0
+--------------------
+Filename: gnm-10-15-0.txt
+Result: 0
+--------------------
+Filename: gnm-10-15-1.txt
+Result: 0
+--------------------
+Filename: gnm-10-20-0.txt
+Result: 0
+--------------------
+Filename: gnm-10-20-1.txt
+Result: 1
+--------------------
+Filename: gnm-1000-1500-0.txt
+Result: 1
+--------------------
+Filename: gnm-1000-1500-1.txt
+Result: 2
+--------------------
+Filename: gnm-1000-2000-0.txt
+Result: 0
+--------------------
+Filename: gnm-1000-2000-1.txt
+Result: 1
+--------------------
+Filename: gnm-2000-3000-0.txt
+Result: 0
+--------------------
+Filename: gnm-2000-3000-1.txt
+Result: 2
+--------------------
+Filename: gnm-2000-4000-0.txt
+Result: 0
+--------------------
+Filename: gnm-2000-4000-1.txt
+Result: 0
+--------------------
+Filename: gnm-3000-4500-0.txt
+Result: 0
+--------------------
+Filename: gnm-3000-4500-1.txt
+Result: 2
+--------------------
+Filename: gnm-3000-6000-0.txt
+Result: 0
+--------------------
+Filename: gnm-3000-6000-1.txt
+Result: 1
+--------------------
+Filename: gnm-4000-6000-0.txt
+Result: 0
+--------------------
+Filename: gnm-4000-6000-1.txt
+Result: 0
+--------------------
+Filename: gnm-4000-8000-0.txt
+Result: 0
+--------------------
+Filename: gnm-4000-8000-1.txt
+Result: 1
+--------------------
+Filename: gnm-5000-10000-0.txt
+Result: 1
+--------------------
+Filename: gnm-5000-10000-1.txt
+Result: 0
+--------------------
+Filename: gnm-5000-7500-0.txt
+Result: -1
+--------------------
+Filename: gnm-5000-7500-1.txt
+Result: -1
+--------------------
+Filename: grid-10-0.txt
+Result: 0
+--------------------
+Filename: grid-10-1.txt
+Result: 0
+--------------------
+Filename: grid-10-2.txt
+Result: 2
+--------------------
+Filename: grid-25-0.txt
+Result: 0
+--------------------
+Filename: grid-25-1.txt
+Result: 0
+--------------------
+Filename: grid-25-2.txt
+Result: 5
+--------------------
+Filename: grid-5-0.txt
+Result: 0
+--------------------
+Filename: grid-5-1.txt
+Result: 0
+--------------------
+Filename: grid-5-2.txt
+Result: 1
+--------------------
+Filename: grid-50-0.txt
+Result: 0
+--------------------
+Filename: grid-50-1.txt
+Result: 0
+--------------------
+Filename: grid-50-2.txt
+Result: 10
+--------------------
+Filename: increase-n10-1.txt
+Result: 1
+--------------------
+Filename: increase-n10-2.txt
+Result: 1
+--------------------
+Filename: increase-n10-3.txt
+Result: -1
+--------------------
+Filename: increase-n100-1.txt
+Result: -1
+--------------------
+Filename: increase-n100-2.txt
+Result: 1
+--------------------
+Filename: increase-n100-3.txt
+Result: -1
+--------------------
+Filename: increase-n20-1.txt
+Result: -1
+--------------------
+Filename: increase-n20-2.txt
+Result: 0
+--------------------
+Filename: increase-n20-3.txt
+Result: -1
+--------------------
+Filename: increase-n50-1.txt
+Result: -1
+--------------------
+Filename: increase-n50-2.txt
+Result: 1
+--------------------
+Filename: increase-n50-3.txt
+Result: 1
+--------------------
+Filename: increase-n500-1.txt
+Result: 1
+--------------------
+Filename: increase-n500-2.txt
+Result: 1
+--------------------
+Filename: increase-n500-3.txt
+Result: 1
+--------------------
+Filename: increase-n8-1.txt
+Result: 1
+--------------------
+Filename: increase-n8-2.txt
+Result: 0
+--------------------
+Filename: increase-n8-3.txt
+Result: 0
+--------------------
+Filename: P3.txt
+Result: 1
+--------------------
+Filename: rusty-1-17.txt
+Result: 0
+--------------------
+Filename: rusty-1-2000.txt
+Result: -1
+--------------------
+Filename: rusty-1-2500.txt
+Result: -1
+--------------------
+Filename: rusty-1-3000.txt
+Result: 0
+--------------------
+Filename: rusty-1-3500.txt
+Result: 0
+--------------------
+Filename: rusty-1-4000.txt
+Result: 0
+--------------------
+Filename: rusty-1-4500.txt
+Result: 0
+--------------------
+Filename: rusty-1-5000.txt
+Result: 0
+--------------------
+Filename: rusty-1-5757.txt
+Result: 0
+--------------------
+Filename: rusty-2-2000.txt
+Result: 0
+--------------------
+Filename: rusty-2-2500.txt
+Result: 0
+--------------------
+Filename: rusty-2-3000.txt
+Result: 0
+--------------------
+Filename: rusty-2-3500.txt
+Result: 0
+--------------------
+Filename: rusty-2-4000.txt
+Result: 0
+--------------------
+Filename: rusty-2-4500.txt
+Result: 0
+--------------------
+Filename: rusty-2-5000.txt
+Result: 0
+--------------------
+Filename: rusty-2-5757.txt
+Result: 0
+--------------------
+Filename: ski-illustration.txt
+Result: 0
+--------------------
+Filename: ski-level10-1.txt
+Result: -1
+--------------------
+Filename: ski-level10-2.txt
+Result: 1
+--------------------
+Filename: ski-level10-3.txt
+Result: 4
+--------------------
+Filename: ski-level20-1.txt
+Result: 3
+--------------------
+Filename: ski-level20-2.txt
+Result: 9
+--------------------
+Filename: ski-level20-3.txt
+Result: -1
+--------------------
+Filename: ski-level3-1.txt
+Result: 0
+--------------------
+Filename: ski-level3-2.txt
+Result: 0
+--------------------
+Filename: ski-level3-3.txt
+Result: 0
+--------------------
+Filename: ski-level5-1.txt
+Result: 1
+--------------------
+Filename: ski-level5-2.txt
+Result: 1
+--------------------
+Filename: ski-level5-3.txt
+Result: 0
+--------------------
+Filename: smallworld-10-0.txt
+Result: 0
+--------------------
+Filename: smallworld-10-1.txt
+Result: 0
+--------------------
+Filename: smallworld-20-0.txt
+Result: 0
+--------------------
+Filename: smallworld-20-1.txt
+Result: 0
+--------------------
+Filename: smallworld-3-0.txt
+Result: 0
+--------------------
+Filename: smallworld-3-1.txt
+Result: 1
+--------------------
+Filename: smallworld-30-0.txt
+Result: 0
+--------------------
+Filename: smallworld-30-1.txt
+Result: 0
+--------------------
+Filename: smallworld-40-0.txt
+Result: 0
+--------------------
+Filename: smallworld-40-1.txt
+Result: 0
+--------------------
+Filename: smallworld-50-0.txt
+Result: 0
+--------------------
+Filename: smallworld-50-1.txt
+Result: 1
+--------------------
+Filename: wall-n-1.txt
+Result: 0
+--------------------
+Filename: wall-n-10.txt
+Result: 0
+--------------------
+Filename: wall-n-100.txt
+Result: 0
+--------------------
+Filename: wall-n-1000.txt
+Result: 0
+--------------------
+Filename: wall-n-10000.txt
+Result: 0
+--------------------
+Filename: wall-n-2.txt
+Result: 0
+--------------------
+Filename: wall-n-3.txt
+Result: 0
+--------------------
+Filename: wall-n-4.txt
+Result: 0
+--------------------
+Filename: wall-p-1.txt
+Result: 0
+--------------------
+Filename: wall-p-10.txt
+Result: 0
+--------------------
+Filename: wall-p-100.txt
+Result: 0
+--------------------
+Filename: wall-p-1000.txt
+Result: 0
+--------------------
+Filename: wall-p-10000.txt
+Result: 0
+--------------------
+Filename: wall-p-2.txt
+Result: 0
+--------------------
+Filename: wall-p-3.txt
+Result: 0
+--------------------
+Filename: wall-p-4.txt
+Result: 0
+--------------------
+Filename: wall-z-1.txt
+Result: 0
+--------------------
+Filename: wall-z-10.txt
+Result: 0
+--------------------
+Filename: wall-z-100.txt
+Result: 0
+--------------------
+Filename: wall-z-1000.txt
+Result: 0
+--------------------
+Filename: wall-z-10000.txt
+Result: 0
+--------------------
+Filename: wall-z-2.txt
+Result: 0
+--------------------
+Filename: wall-z-3.txt
+Result: 0
+--------------------
+Filename: wall-z-4.txt
+Result: 0
+--------------------
