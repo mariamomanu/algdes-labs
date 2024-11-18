@@ -70,38 +70,24 @@ def input_handling_for_few(file_content):
             V.append(temp)
     print(R)
 
-    # Debugging output for verification
-    print(f"R: {R}")
-    print(f"V: {V}")
+    # # Debugging output for verification
+    # print(f"R: {R}")
+    # print(f"V: {V}")
 
-    adjacency_list_V = {}
-    adjacency_list_R = {}
-    adjacency_list_V_R = {}
-# Edges processing
+    adjacency_list_vertices = {}
+    # Edges processing
     for i in range (m_lines_start_at, m_lines_start_at+m):
         u, direction, v = lines[i].split()
             
-        if (u in R and v in R):
-            if u not in adjacency_list_R:
-                adjacency_list_R[u] = []
-            adjacency_list_R[u].append((u, direction, v))
-
-        elif (u in R or v in R):
-            if u not in adjacency_list_V_R:
-                adjacency_list_V_R[u] = []
-            adjacency_list_V_R[u].append((u, direction, v))
-
-        else:
-            if u not in adjacency_list_V:
-                adjacency_list_V[u] = []
-            adjacency_list_V[u].append((u, direction, v))
+        if (u not in adjacency_list_vertices):
+            adjacency_list_vertices[u] = []
+        adjacency_list_vertices[u].append((u, direction, v))
 
     # Debugging output for verification
-    print(f"Adjacency list V: {adjacency_list_V}")
-    print(f"Adjacency list R: {adjacency_list_R}")
-    print(f"Adjacency list V-R: {adjacency_list_V_R}")
+    print(f"Adjacency list V: {adjacency_list_vertices}")
 
-    return V, R, adjacency_list_V, adjacency_list_R, adjacency_list_V_R
+
+    return V, R, adjacency_list_vertices
 
 
 def dijsktra_algorithm(graph, start_node):
@@ -149,6 +135,9 @@ def main():
         
         # 2. Running the algorithm
         # few_dijkstra_logic(V, R, adjacency_list_V, adjacency_list_R, adjacency_list_V_R)
+        Graph.construct_graph()
+    
+    
 
 
 if __name__ == '__main__':
