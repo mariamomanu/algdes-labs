@@ -62,7 +62,7 @@ def input_handling_for_few(file_content):
     # handling of no existing edges
     if (m == 0):
         empty = {}
-        return empty, start, terminal
+        return empty, start, terminal, 0
     
     # initiate Vertices and RedVertices sets
     V = set()
@@ -75,6 +75,11 @@ def input_handling_for_few(file_content):
             R.add(temp.split()[0])
         else:
             V.add(temp)
+
+    if start in R:
+        start_node_cost = 1
+    else:
+        start_node_cost = 0
 
     # # # Debugging output for verification
     # print(f"R: {R}")
@@ -108,17 +113,18 @@ def input_handling_for_few(file_content):
                     adjacency_directed[v] = []
                 weight = 1 if u in R else 0
                 adjacency_directed[v].append((v, u, weight))
+            
 
-    return adjacency_directed, start, terminal
+    return adjacency_directed, start, terminal, start_node_cost
 
-def dijkstra(edges, start_node, terminal_node):
+def dijkstra(edges, start_node, terminal_node, start_node_cost_passed):
     if not edges:
         return -1
     
     # Initialize the priority queue, visited set, and distance tracker
-    q = [(0, start_node, ())]  # Priority queue initialized with the start node
+    q = [(start_node_cost_passed, start_node, ())]  # Priority queue initialized with the start node
     seen_set = set()
-    minimal_cost_set = {start_node: 0}  # Tracks minimal cost to each node
+    minimal_cost_set = {start_node: start_node_cost_passed}  # Tracks minimal cost to each node
 
     # Process nodes in priority queue
     while q:
@@ -157,17 +163,15 @@ def main():
         print(f"Processing file: {filename}")
         
         # 1. Input handling for the file (reading, parsing, etc.)
-        adjacency_directed, start_node, terminal_node = input_handling_for_few(content)
+        adjacency_directed, start_node, terminal_node, start_node_cost = input_handling_for_few(content)
         # 2. Running the algorithm
-        result = dijkstra(adjacency_directed, start_node, terminal_node)
-        with open('out.txt', 'a') as f:  # Use 'a' for append mode to avoid overwriting
+        result = dijkstra(adjacency_directed, start_node, terminal_node, start_node_cost)
+        with open('out-02.txt', 'a') as f:  # Use 'a' for append mode to avoid overwriting
             print(f'Filename: {filename}', file=f)  # Write filename
             print(f'Result: {result}', file=f)  # Write result
             print('-' * 20, file=f)  # Add a separator for readability
         
         # print("Result is: ", result)
-
-        
 
 if __name__ == '__main__':
     main()
